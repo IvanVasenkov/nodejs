@@ -1,8 +1,8 @@
-var querystring = require("querystring");
+
 var https = require("https");
 var parsedData = '';
   var rawData = '';
-function start(response, postData) {
+function start(response) {
   console.log("Request handler 'start' was called.");
 
   var body = '<html>'+
@@ -23,7 +23,7 @@ function start(response, postData) {
     response.end();
 }
 
-function upload(response, postData) {
+function upload(response) {
 
   https.get('https://jsonplaceholder.typicode.com/todos', (res) => {
   const statusCode = res.statusCode;
